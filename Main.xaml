@@ -1,15 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Main_1"
- xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
- xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
- xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
- xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
- xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
- xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
- xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
- xmlns:ui="http://schemas.uipath.com/workflow/activities"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="414,1186" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -63,10 +52,9 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="374,1106" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ld_jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="ld_jsonStatus" />
@@ -75,12 +63,18 @@
       <Variable x:TypeArguments="njl:JObject" Name="ld_JsonObject" />
       <Variable x:TypeArguments="njl:JArray" Name="ld_jArray" />
     </Sequence.Variables>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="dictionary.Add(&quot;count&quot;, &quot;5&quot;)&#xA;dictionary.Add(&quot;requeue&quot;, &quot;true&quot;)&#xA;dictionary.Add(&quot;encoding&quot;, &quot;auto&quot;)&#xA;dictionary.Add(&quot;truncate&quot;, &quot;50000&quot;)" DisplayName="Invoke Code" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="352,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="Hello World" TopMost="True" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="dictionary.Add(&quot;count&quot;, &quot;5&quot;)&#xA;dictionary.Add(&quot;requeue&quot;, &quot;true&quot;)&#xA;dictionary.Add(&quot;encoding&quot;, &quot;auto&quot;)&#xA;dictionary.Add(&quot;truncate&quot;, &quot;50000&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="352,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="dictionary">[ld_dictionary]</InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ld_body]</OutArgument>
       </Assign.To>
@@ -88,7 +82,7 @@
         <InArgument x:TypeArguments="x:String">[JsonConvert.SerializeObject(ld_dictionary)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" ResourcePath="{x:Null}" StatusCode="{x:Null}" AcceptFormat="JSON" Body="[ld_body]" BodyFormat="application/json" DisplayName="HTTP Request" EndPoint="https://golden-kangaroo.rmq.cloudamqp.com/api/queues/sotzxlmq/hello/get" sap2010:WorkflowViewState.IdRef="HttpClient_6" Method="POST" Password="nj7OOA3B8Ct4vj0-PSsHfUndS2ZBP1C8" Result="[ld_jsonResponse]" TimeoutMS="6000" Username="sotzxlmq">
+    <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" ResourcePath="{x:Null}" StatusCode="{x:Null}" AcceptFormat="JSON" Body="[ld_body]" BodyFormat="application/json" DisplayName="HTTP Request" EndPoint="https://golden-kangaroo.rmq.cloudamqp.com/api/queues/sotzxlmq/hello/get" sap:VirtualizedContainerService.HintSize="352,22" sap2010:WorkflowViewState.IdRef="HttpClient_6" Method="POST" Password="nj7OOA3B8Ct4vj0-PSsHfUndS2ZBP1C8" Result="[ld_jsonResponse]" TimeoutMS="6000" Username="sotzxlmq">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -102,46 +96,24 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[ld_jArray]" JsonString="[ld_jsonResponse]" />
-    <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[ld_jArray]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[ld_jArray]" JsonString="[ld_jsonResponse]" />
+    <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="352,318" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[ld_jArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JObject">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="njl:JObject" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[item.SelectToken(&quot;payload&quot;).ToString]" TopMost="True" />
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,183" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[item.SelectToken(&quot;payload&quot;).ToString]" TopMost="True" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[ld_jsonResponse.ToString]" TopMost="True" />
-    <sads:DebugSymbol.Symbol>dzhDOlxVc2Vyc1xuYmplcmtlXERvY3VtZW50c1xVaVBhdGhcUmFiYml0TVFUZXN0XE1haW4ueGFtbBhFA3gOAgEBSk5KcwIBAk4FUhUCAR1TBVoOAgEZWwVoFQIBEGkFabUBAgELagV1EgIBBnYFdsgBAgEDUGBQbwIBHlgwWFwCARxVMVU6AgEaW5gEW54EAgEYW/IBW/0BAgEWW6gEW7IEAgEVW/oDW40EAgETW8ACW4kDAgESW9ADW/IDAgERaYYBaZMBAgEOaZ8BabIBAgEMapMBaqABAgEKcAtyFgIBB3aaAXa2AQIBBHENceYBAgEIcaIBcdQBAgEJ</sads:DebugSymbol.Symbol>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="352,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[ld_jsonResponse.ToString]" TopMost="True" />
   </Sequence>
-  <sap2010:WorkflowViewState.ViewStateManager>
-    <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeCode_1" sap:VirtualizedContainerService.HintSize="352,164" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="352,60" />
-      <sap2010:ViewStateData Id="HttpClient_6" sap:VirtualizedContainerService.HintSize="352,22" />
-      <sap2010:ViewStateData Id="DeserializeJsonArray_1" sap:VirtualizedContainerService.HintSize="352,60" />
-      <sap2010:ViewStateData Id="MessageBox_5" sap:VirtualizedContainerService.HintSize="314,59" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,183">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach`1_4" sap:VirtualizedContainerService.HintSize="352,317" />
-      <sap2010:ViewStateData Id="MessageBox_4" sap:VirtualizedContainerService.HintSize="352,59" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="374,1006">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="414,1126" />
-    </sap2010:ViewStateManager>
-  </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
