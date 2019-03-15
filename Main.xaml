@@ -68,7 +68,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="352,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="Hello world!" TopMost="True" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="352,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="Hello world! ABC" TopMost="True" />
     <ui:InvokeCode ContinueOnError="{x:Null}" Code="dictionary.Add(&quot;count&quot;, &quot;5&quot;)&#xA;dictionary.Add(&quot;requeue&quot;, &quot;true&quot;)&#xA;dictionary.Add(&quot;encoding&quot;, &quot;auto&quot;)&#xA;dictionary.Add(&quot;truncate&quot;, &quot;50000&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="352,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="dictionary">[ld_dictionary]</InOutArgument>
