@@ -1,0 +1,37 @@
+{
+  "name": "RabbitMQTest",
+  "description": "Blank Process",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.4.6863.30657]",
+    "UiPath.Mail.Activities": "[1.2.6863.29868]",
+    "UiPath.WebAPI.Activities": "[1.2.6863.33980]",
+    "UiPath.System.Activities": "[18.3.6877.28276]",
+    "UiPath.Database.Activities": "[1.2.6863.32528]",
+    "UiPath": "[9.0.6877.24355]",
+    "UiPath.Java.Activities": "[1.0.6863.33114]",
+    "UiPath.Python.Activities": "[1.1.6863.33404]",
+    "UiPath.UIAutomation.Activities": "[18.3.6877.28298]",
+    "UiPath.FTP.Activities": "[1.0.6710.16240]",
+    "UiPath.Terminal.Activities": "[1.2.6863.33681]",
+    "UiPath.Script.Activities": "[1.0.6710.16240]",
+    "UiPathTeam.File.Activities": "[1.0.4]",
+    "Microsoft.Activities.Extensions": "[2.0.6.9]",
+    "Microsoft.Activities": "[1.0.1]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.3.1.0",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  }
+}
